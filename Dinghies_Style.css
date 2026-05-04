@@ -1,0 +1,129 @@
+:root {
+    --primary: #005f73;
+    --secondary: #0a9396;
+    --accent: #ee9b00;
+    --bg: #f8f9fa;
+    --text: #333;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 1.5rem 2rem 1rem;
+    text-align: center;
+}
+
+header h1 { margin-bottom: 0.5rem; font-size: 1.8rem; }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+nav a:hover, nav a.active {
+    background: var(--secondary);
+    color: white;
+}
+
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+main h2 { color: var(--primary); margin-bottom: 1rem; }
+main p { margin-bottom: 1rem; }
+
+.category-links, .dinghy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+.card p { margin-bottom: 0.5rem; }
+.card p strong { color: var(--secondary); }
+
+.interactive {
+    margin-top: 2.5rem;
+    text-align: center;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.interactive h3 { margin-bottom: 0.5rem; color: var(--primary); }
+.fact-text { min-height: 1.5em; margin-bottom: 1rem; font-style: italic; opacity: 1; transition: opacity 0.3s ease; }
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+button:hover { background: var(--secondary); }
+
+footer {
+    background: var(--primary);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+@media (max-width: 600px) {
+    nav ul { flex-direction: column; gap: 0.5rem; }
+    header h1 { font-size: 1.5rem; }
+}
